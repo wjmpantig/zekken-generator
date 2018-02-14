@@ -1,0 +1,27 @@
+/*@font-face {
+  font-family: 'BebasNeueBold';
+  src: url('fonts/BebasNeueBold.otf');
+  src: url('fonts/BebasNeueBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'nagayama_kai-90ms-RKSJ-H';
+  src: url('fonts/nagayama_kai08.otf');
+  src: url('fonts/nagayama_kai08.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NotoSerifCJKjp-Bold-90ms-RKSJ-H';
+  src: url('fonts/NotoSerifCJKjp-Bold.otf');
+  src: url('fonts/NotoSerifCJKjp-Bold.otf') format('opentype');
+}*/
+
+.image_container {
+	position: relative;
+}
+.image_container .guidelines{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 0;
+}
