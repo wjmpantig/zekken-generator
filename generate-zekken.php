@@ -1,28 +1,34 @@
 <?php 
-require_once("functions.php");
 
-$surname = $_GET['surname'];
-$jp = $_GET['jpn'];
-$width_inch = 6.25;
-$height_inch= 10.415;
-$dpi = 200;
-if(is_null($jp) || is_null($surname)) {
-	return ;
+$svg = $_POST['svg'];
+$width = $_POST['width'];
+$height = $_POST['height'];
+if(is_null($svg) || empty($svg)){
+	echo "no svg input";
+	return false;
 }
-$width = $width_inch * $dpi;
-$height = $height_inch * $dpi;
 
-$background = hex2rgb('#01084d');
+$svg = str_replace("fonts/", "../fonts/", $svg);
+$dir = __DIR__.'/tmp';
+$pngdir = __DIR__.'/png';
+$temp_name = tempnam($dir,"svg");
+$temp_out = basename($temp_name).'.png';
+$temp  = fopen($temp_name,"w");
+fwrite($temp, $svg);
+fclose($temp);
 
-header("Content-Type: image/png");
+$cmd = "svg2png $temp_name -o$temp_out -w$width -h$height";
 
-
-$image = @imagecreatetruecolor($width, $height) or die("Cannot Initialize new GD image stream");
-$bg_color = imagecolorallocate($image, $background[0], $background[1], $background[2]);
-imagefill($image, 0, 0, $bg_color);
-imagepng($image);
-imagedestroy($image);
-
-
+$output = array();
+$result = 0;
+chdir($pngdir);
+exec($cmd,$output,$result);
+if($result == 0){
+	echo $temp_out;
+}else{
+	echo "something failed";
+	print_r($output);
+	return false;
+}
 
 ?>
