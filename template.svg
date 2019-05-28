@@ -1,7 +1,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 450 749.9" style="enable-background:new 0 0 450 749.9;" xml:space="preserve" class="svg_template">
 <style type="text/css">
-	.st0{fill:#01084D;}
+	
 	.st1{fill:#FFFFFF;}
 	.st2{font-family:'BebasNeueBold';}
 	.st3{font-size:80px;}
@@ -33,7 +33,7 @@
 }
 </style>
 <g id="template">
-	<rect id="bg" class="st0" width="450" height="749.9"/>
+	<rect id="bg" class="st0 bg" width="450" height="749.9" fill="#01084D"/>
 	<text transform="matrix(0.9926 0 -0.1219 0.9926 153.9806 203.9734)" class="st1 st2 st3">IGA</text>
 	<text transform="matrix(1 0 0 1 33.3293 131.7402)" class="st1 st2 st4">PHILIPPINES</text>
 	
@@ -3013,8 +3013,8 @@ RK5CYII=" transform="matrix(0.36 0 0 0.36 234.44 139.0735)">
 	</image>
 </g>
 <g id="content">
-	<text id="svg_name" class="st1 st2"></text>
-	<text id="svg_japanese_name" class="st1 st7"></text>
+	<text id="svg_name" class="st1 st2 svg_name"></text>
+	<text id="svg_japanese_name" class="st1 st7 svg_japanese_name"></text>
 </g>
 <!-- <g id="barrientos">
 	<text transform="matrix(0.9926 0 -0.1974 1.6079 37.1967 720.0327)" class="st1 st2 st8">barrientos</text>

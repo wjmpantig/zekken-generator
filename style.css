@@ -16,6 +16,10 @@
   src: url('fonts/NotoSerifCJKjp-Bold.otf') format('opentype');
 }*/
 
+body{
+  background: #d0d0d0;
+}
+
 .image_container {
 	position: relative;
 }
@@ -24,4 +28,9 @@
 	width: 100%;
 	height: auto;
 	top: 0;
+}
+
+.with-grid{
+  background: url('grid.png');
+  background-size: cover; 
 }

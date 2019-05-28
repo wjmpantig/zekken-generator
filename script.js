@@ -6,15 +6,17 @@
 		var x = (rect_bbox.cx) - (name_bbox.width/2);
 		name.move(x,y);
 	}
+
 	$(document).foundation();
 
 	var container = $(".output_container");
 	container.hide();
 	var output1 = $("#output_1");
+	var output2 = $("#output_2");
 	
-	var jp_name = SVG.select("#svg_japanese_name").first();
-	var name = SVG.select("#svg_name").first();
-	var rect = SVG.select("#bg").first();
+	var jp_name = SVG.select(".svg_japanese_name").first();
+	var name = SVG.select(".svg_name").first();
+	var rect = SVG.select(".bg").first();
 
 	$("#name").change(function(){
 		var value = $(this).val();
@@ -99,10 +101,11 @@
 	})
 
 	$("#form select,input").change(function(){
-		container.hide();
+		// container.hide();
 		
 	}).change();
 
+	
 	
 
 	$('#save-button').click(function(e){
@@ -122,6 +125,25 @@
 			output1.attr('src','png/' + data);
 		}).fail(function(data){
 			console.error(data)
-		})
+		});
+
+		var bg_color = rect.attr('fill');
+		console.log(bg_color);
+		rect.fill('transparent');
+
+		svg = $(".svg_template").get(0).outerHTML;
+		data = {
+			svg:svg,
+			width: width,
+			height: height
+		}
+
+		$.post('generate-zekken.php',data,function(data){
+			container.show();
+			output2.attr('src','png/' + data);
+			rect.fill(bg_color);
+		}).fail(function(data){
+			console.error(data)
+		});
 	});
 })(jQuery);

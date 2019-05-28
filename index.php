@@ -84,7 +84,7 @@
 				
 				
 			</div>
-			<div class="column small-12 large-2">
+			<div class="column small-4 large-2">
 						<div class="image_container">
 							
 						<?php 
@@ -92,11 +92,18 @@
 						?>
 						<img class="guidelines" src="guidelines.svg" alt="">
 						</div>
+
+						
 			</div>
-			<div class="column small-12 large-2 end">
+			<div class="column small-4 large-2">
 						<div class="output_container">	
-							generated image:
 							<img id="output_1" alt="">
+						</div>
+					
+			</div>
+			<div class="column small-4 large-2 end">
+						<div class="output_container with-grid">	
+							<img id="output_2" alt="">
 						</div>
 			</div>
 		</div>
